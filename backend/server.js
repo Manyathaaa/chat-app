@@ -1,6 +1,8 @@
 import express from 'express';
 import {chats} from './data/data.js'; 
+import dotenv from 'dotenv';
 
+dotenv.config();    
 const app = express();
 const PORT = process.env.PORT || 3000;
 
