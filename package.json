@@ -1,9 +1,27 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "mongoose": "^9.0.0",
     "morgan": "^1.10.1",
     "nodemon": "^3.1.11"
-  }
+  },
+  "name": "lets-vibe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node run server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manyathaaa/chat-app.git"
+  },
+  "author": "manyatha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manyathaaa/chat-app/issues"
+  },
+  "homepage": "https://github.com/Manyathaaa/chat-app#readme"
 }
