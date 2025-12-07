@@ -5,7 +5,10 @@
   "main": "backend/server.js",
   "scripts": {
     "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js"
+    "dev": "nodemon backend/server.js",
+    "start:backend": "node backend/server.js",
+    "start:frontend": "cd frontend && npm start",
+    "dev:all": "npm run start:backend & npm run start:frontend"
   },
   "dependencies": {
     "cors": "^2.8.5",
