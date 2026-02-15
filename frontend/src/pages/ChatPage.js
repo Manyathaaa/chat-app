@@ -1,21 +1,33 @@
-import React, { useEffect } from 'react'
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const ChatPage = () => {
+  const [chats, setChats] = useState([]);
 
-    const fetchChats = async() => {
-        const data = await axios.get('/api/v1/chats');
+  const fetchChats = async () => {
+    const { data } = await axios.get("/api/v1/chats");
+    setChats(data);
+  };
 
-        console.log(data);
-    }
+  useEffect(() => {
+  axios.get("/api/v1/chats").then((res) => {
+    console.log(res.data);   // 👈 console me chats
+    setChats(res.data);
+  });
+}, []);
 
-    useEffect(() => {
-        fetchChats();
-       return () => {
-       }}, []);
+
+  return (
     <div>
-      ChatPage
-    </div>
-}
+        <h1>Chat Page</h1>
 
-export default ChatPage
+        {chats.map((chat) => (
+            <div key={chat._id}>
+                {chat.chatName}
+            </div>
+        ))}
+    </div>
+  );
+};
+
+export default ChatPage;
