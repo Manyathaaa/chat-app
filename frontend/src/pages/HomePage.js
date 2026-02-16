@@ -1,25 +1,26 @@
 import React from "react";
-import { Container, Box, Text, Tabs } from "@chakra-ui/react";
+import {
+  Container,
+  Box,
+  Text,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+} from "@chakra-ui/react";
+import Login from "../Components/Authentication/Login";
+import SignUp from "../Components/Authentication/SignUp";
 
 const HomePage = () => {
   return (
-    <Container maxW="xl" centerContent>
-      {/* Title Card */}
-      <Box
-        bg="white"
-        w="90%"
-        p="30px"
-        borderRadius="lg"
-        borderWidth="1px"
-        textAlign="center"
-        m="40px 0 15px 0"
-      >
+    <Container maxW="xl" centerContent> <Box bg={'white'} display="flex" flexDirection="column" alignItems="center" justifyContent="center" height="40px" w="90%" p="30px" borderRadius="lg" borderWidth="1px" color="black" m="40px 0 15px 0" >
         <Text fontSize="4xl" fontWeight="bold">
           TALK-A-TIVE
         </Text>
       </Box>
 
-      {/* Tabs Card */}
+      {/* Tabs */}
       <Box
         bg="white"
         w="100%"
@@ -27,22 +28,17 @@ const HomePage = () => {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Tabs.Root defaultValue="login" width="full">
-          <Tabs.List>
-            <Tabs.Trigger value="login">Login</Tabs.Trigger>
-            <Tabs.Trigger value="signup">Sign Up</Tabs.Trigger>
-          </Tabs.List>
+        <Tabs variant="soft-rounded" colorScheme="blue" isFitted>
+          <TabList mb="1em">
+            <Tab>Login</Tab>
+            <Tab>Sign Up</Tab>
+          </TabList>
 
-          <Box mt="4">
-            <Tabs.Content value="login">
-              Login Form Here
-            </Tabs.Content>
-
-            <Tabs.Content value="signup">
-              Signup Form Here
-            </Tabs.Content>
-          </Box>
-        </Tabs.Root>
+          <TabPanels>
+            <TabPanel><Login /></TabPanel>
+            <TabPanel><SignUp /></TabPanel>
+          </TabPanels>
+        </Tabs>
       </Box>
     </Container>
   );
